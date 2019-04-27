@@ -1,0 +1,4 @@
+.top{
+    background-color: var(--primary-color);
+    grid-area: top;
+}

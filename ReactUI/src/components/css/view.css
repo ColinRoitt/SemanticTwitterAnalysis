@@ -1,0 +1,63 @@
+body{
+    overflow: hidden;
+}
+
+.container-vieww{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        'line goodtweets'
+        'bar badtweets';
+}
+
+.line{
+    grid-area: line;
+}
+
+.line #curve_chart{
+    width:inherit;
+    height:inherit;     
+}
+
+.bar2{
+    grid-area: bar2;
+}
+
+.bar{
+    grid-area: bar;
+}
+
+.tweet_cont{
+    overflow-y: auto;
+    height:30vh;
+    padding: 5px;
+}
+
+.goodtweets{
+    /* border-left: 2px solid green; */
+    grid-area: goodtweets;
+}
+
+.badtweets{
+    /* border-left: 2px solid red; */
+    grid-area: badtweets;
+}
+
+i.icon-red{
+    color: red;
+}
+
+i.icon-green{
+    color: green;
+}
+
+line, bar, bar2{
+    padding: 10px;
+}
+
+#curve_chart{
+    width:50%;
+}

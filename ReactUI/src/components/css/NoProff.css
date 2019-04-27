@@ -1,0 +1,7 @@
+.NoProfError{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+    color: var(--tertiary-color);
+}

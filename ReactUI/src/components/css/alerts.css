@@ -1,0 +1,31 @@
+
+.container-alerts{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        '. alerts .';
+  }
+  
+  .alerts{
+    grid-area: alerts;
+  }
+  
+  .btn-floating{
+    background-color: var(--secondary-color);
+    float: right;
+  }
+  
+  .btn-floating:hover{
+    background-color: var(--secondary-color);
+  }
+  
+  i{
+    color: var(--secondary-color);
+  }
+
+  .del{
+    color: var(--tertiary-color);
+  }

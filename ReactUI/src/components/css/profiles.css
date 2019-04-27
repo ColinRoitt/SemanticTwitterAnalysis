@@ -1,0 +1,33 @@
+.side{
+    background-color: var(--primary-color);
+    grid-area: side;
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  .profile-cont{
+    background-color:white;
+    margin: 20px auto;
+    font-size: 30px;
+    font-weight: 300;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+  
+  .side .profile{
+    position: relative;
+    left: 18px;
+    top: 15px;
+  }
+  
+  .side .btn-floating{
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: 20px;
+    left: 7vw;
+  }
+
+  .side .btn-floating:hover{
+    background-color:var(--secondary-color-hover);  
+  }

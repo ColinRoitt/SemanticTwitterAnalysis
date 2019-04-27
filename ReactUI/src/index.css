@@ -1,0 +1,64 @@
+/* :root{
+  --primary-color: #6200EE;
+  --primary-color-hover: #3700B3;
+  --secondary-color: #03DAC6;
+  --secondary-color-hover: #018786;
+  --tertiary-color: #c51162;
+} */
+
+:root{
+  --primary-color: #2a2d32;
+  --primary-color-hover: #36383b;
+  --secondary-color: #4ecdc4;
+  --secondary-color-hover: #53ebe1;
+  --tertiary-color: #ff6b6b;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+.container-template{
+  display:grid;
+  height:100vh;
+  width:100vw;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr 8fr;
+  grid-template-areas: 
+      'logo top'
+      'side main';
+}
+
+.container-edit{
+  grid-area: main;
+}
+/* ------------------------------------------------------ */
+@media only screen and (max-width: 700px) {
+  .container-template{
+      grid-template-columns: 1fr 10fr;
+      grid-template-rows: 1fr 1fr 7fr;
+      grid-template-areas: 
+          'logo side'
+          'top top'
+          'main main';
+  }
+  .logo a{
+      font-size: 10px;
+  }
+  .profile-cont{
+      display: inline;
+      /* position: static; */
+      font-size: 30px;
+  }
+
+  .side .profile{
+      position: static;
+      /* padding: 4px; */
+  }
+}

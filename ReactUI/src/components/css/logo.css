@@ -1,0 +1,13 @@
+.logo{
+    grid-area: logo;
+    background-color: var(--secondary-color);
+    position: relative;
+    width: 100%;
+}
+  
+.logo a{
+    bottom: 0px;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+}
