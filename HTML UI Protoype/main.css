@@ -1,0 +1,64 @@
+main#edit{
+    /* background-color:red; */
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        '. . . . .'
+        '. chips chips chips .'
+        '. social social . .'
+        '. date . . .'
+        '. number number number .'
+        '. . . button .';
+}
+
+chips{
+    /* width:100%; */
+    /* height:100%; */
+    /* background-color:blue; */
+    grid-area:chips;
+}
+
+.submit{
+    grid-area: button;
+}
+
+date{
+    grid-area: date
+}
+
+number{
+    grid-area: number;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: #4ecdc4;
+}
+input[type=range]::-moz-range-thumb {
+    background-color: #4ecdc4;
+}
+input[type=range]::-ms-thumb {
+    background-color: #4ecdc4;
+}
+input[type=range] + .thumb {
+    background-color: #4ecdc4;
+}
+
+.datepicker-date-display{  
+  background-color: #4ecdc4;
+}
+
+.chips.focus{
+    border-bottom: #4ecdc4;
+    box-shadow:#4ecdc4;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #4ecdc4;
+}
+
+social{
+    grid-area: social;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="template.css" />
+</head>
+
+<body>
+    <container>
+        <top>
+            <ul class="z-depth-1 tabs tabs-fixed-width">
+                <li class="tab"><a href="#edit" onclick=change('edit')><i class="small material-icons">create</i></a></li>
+                <li class="tab"><a href="#view" onclick=change('analysis')><i class="small material-icons">show_chart</i></a></li>
+                <li class="tab"><a href="#alerts" onclick=change('alerts')><i class="small material-icons">add_alert</i></a></li>
+            </ul>
+        </top>
+        <logo>
+            <a>Social<br />Sent</a>
+        </logo>
+        <side>
+            <div class='side-cont'>
+                <div class='hoverable profile-cont'>
+                    <profile>
+                        P1
+                    </profile>
+                </div>
+                <div class='hoverable profile-cont'>
+                    <profile>
+                        P2
+                    </profile>
+                </div>
+                <div class='hoverable profile-cont'>
+                    <profile>
+                        P3
+                    </profile>
+                </div>
+            </div>
+            <span>
+                <a onclick="addProfile()" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
+            </span>
+        </side>
+        <main>
+            <iframe frameBorder="0" src="edit.html"></iframe>
+        </main>
+    </container>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        let instance = M.Tabs.init(document.querySelector('top ul'));
+
+        function change(url) {
+            document.querySelector('iframe').src = url + '.html';
+        }
+
+        function addProfile() {
+            let name = prompt("Please enter the name for the new profile");
+            let profile = document.querySelectorAll('.profile-cont')[0].cloneNode(true);
+            document.querySelector('.side-cont').append(profile);
+            let profiles = document.querySelectorAll('profile');
+            profiles[profiles.length - 1].innerHTML = name.substr(0, 2);
+        }
+    </script>
+</body>
+
+</html>

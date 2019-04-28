@@ -154,9 +154,7 @@ def saveTweet():
 if __name__ == '__main__':
     app.run(debug=True, threaded=True)
 
-# sort out what these machine learning algortihms actually look like
-#
-#
+
 #
 
 # CREATE TABLE `colinroi_fyp`.`Profiles` ( `PID` INT NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `search` VARCHAR(250) NOT NULL , `social` VARCHAR(20) NOT NULL , `start` DATE NOT NULL , `countPerDay` INT(100) NOT NULL , PRIMARY KEY (`PID`)) ENGINE = InnoDB;

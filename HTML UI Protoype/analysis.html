@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="analysis.css" />
+</head>
+
+<body>
+    <h4>Profile 1</h4>
+    <container>
+        <line>
+            <div id="curve_chart"></div>
+        </line>
+        <bar>
+            <div id="bar_chart"></div>
+        </bar>
+        <bar2>
+            <div id="bar_chart2"></div>
+        </bar2>
+        <tweets class="goodtweets">
+            <h5>Positive sentiment</h5>
+            <div class="tweet_cont">
+                <tweet>
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            </div>
+                        </div>
+                    </div>
+                </tweet>
+            </div>
+        </tweets>
+        <tweets class="badtweets">
+            <h5>Negative sentiment</h5>
+            <div class="tweet_cont">
+                <tweet>
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            </div>
+                        </div>
+                    </div>
+                </tweet>
+            </div>
+        </tweets>
+    </container>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawLineChart);
+        google.charts.setOnLoadCallback(drawColumnChart);
+        google.charts.setOnLoadCallback(drawColumnChart2);
+
+        function drawLineChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Percentage Positive', 'date'],
+                ['Mar 19', 20],
+                ['Apr 19', 30],
+                ['May 19', 55],
+                ['Jun 19', 48]
+            ]);
+
+            var options = {
+                title: 'Sentiment over time',
+                // curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+            chart.draw(data, options);
+
+        }
+
+        function drawColumnChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Sentiment', '<50%', '>50%', '>75%', { role: 'annotation' }],
+                ['Positive Sentiment', 2, 30, 70, ''],
+                ['Negative Sentiment', 8, 22, 70, '']
+            ]);
+
+            var options = {
+                width: 400,
+                legend: { position: 'top', maxLines: 3 },
+                bar: { groupWidth: '75%' },
+                isStacked: true,
+                vAxis: { minValue: 0, maxValue: 100 }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart'));
+
+            chart.draw(data, options);
+        }
+
+        function drawColumnChart2() {
+            var data = google.visualization.arrayToDataTable([
+                ['Sentiment', '<50%', '>50%', '>75%', { role: 'annotation' }],
+                ['Positive Sentiment', 2, 30, 70, ''],
+                ['Negative Sentiment', 8, 22, 70, '']
+            ]);
+
+            var options = {
+                width: 400,
+                legend: { position: 'top', maxLines: 3 },
+                bar: { groupWidth: '75%' },
+                isStacked: true,
+                vAxis: { minValue: 0, maxValue: 100 }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('bar_chart2'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+
+</html>
